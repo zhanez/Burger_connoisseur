@@ -1,0 +1,36 @@
+{{> navbar/navbar-block}}
+
+<ul class="list-group">
+
+    {{#each burgers}}
+    {{#unless devoured}}
+    <li class="list-group-item"> {{burger_name}} <button>Devoured</button> </li>
+    {{/unless}}
+    {{/each}}
+
+
+</ul>
+
+
+
+<ul class="list-group">
+  
+        {{#each burgers}}
+        {{#if devoured}}
+         <li class="list-group-item"> {{burger_name}}</li>
+        {{/if}}
+        {{/each}}
+
+</ul>
+
+
+<form action="/api/burger" method="POST">
+  <input type="text" name="burger_name" id="">
+
+  <input type ="submit" value="submit">
+</form>
+
+
+
+
+{{> footer/footer}}
