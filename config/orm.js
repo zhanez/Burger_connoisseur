@@ -6,6 +6,16 @@ var orm ={
         connection.query("SELECT * from ??", tableName, function(err, burgerData){
             cbModels(burgerData)
         })
+    },
+    insertOne: function(tableName, body, cbModels){
+        connection.query("INSERT INTO ?? set ?", [tableName, body], function(err, burgerData){
+            cbModels(burgerData)
+        })
+    },
+    updateOne: function(tableName, updateObject, condition, cbModels){
+        connection.query("UPDATE ?? set ? WHERE ?", [tableName, updateObject, condition],function(err, burgerData){
+            cbModels(burgerData)
+        })
     }
 }
 
