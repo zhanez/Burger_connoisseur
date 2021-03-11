@@ -25,7 +25,16 @@ router.put("/api/burgers/:id", function(req,res){
     var updateObject={
         devoured:true
     }
-    burger.updateOne(updateObject, condition, function(burgerData){
+    burgerModel.updateOne(updateObject, condition, function(burgerData){
+        res.json(burgerData)
+    })
+})
+
+router.delete("/api/burgers/:id", function(req,res){
+    var condition={
+        id:req.params.id
+    }
+    burger.delete( condition, function(burgerData){
         res.json(burgerData)
     })
 })

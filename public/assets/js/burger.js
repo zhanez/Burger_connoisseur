@@ -18,7 +18,7 @@ $(".delete").on("click", function(event){
     })
     .then(function(){
     console.log("deleted burger", id);
-    location.reload()
-})
-
-})
+    location.reload();
+        }
+    );
+});

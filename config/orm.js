@@ -17,7 +17,11 @@ var orm ={
             cbModels(burgerData)
         })
     },
-    
+    delete: function(tableName, condition, cbModels){
+        connection.query("DELETE FROM ?? set ? WHERE ?", [ condition],function(err, burgerData){
+            cbModels(burgerData)
+        })
+    }
 }
 
 module.exports= orm
