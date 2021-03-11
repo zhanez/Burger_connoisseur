@@ -1,3 +1,9 @@
+$(function () {
+    $(".create-form").on("submit", function (event) {
+      event.preventDefault();
+    
+    });
+
 $(".devoured").on("click", function(){
     var id = $(this).attr("data-id")
     $.ajax({
@@ -5,13 +11,15 @@ $(".devoured").on("click", function(){
         method:"PUT"
     })
     .then(function(){
-    location.reload()
-})
-
+    location.reload();
+    }
+    );
 });
 
+
+
 $(".delete").on("click", function(event){
-    var id = $(this).attr("data-id");
+    var id = $(this).attr("id");
     $.ajax({
         url:"/api/burgers/"+id,
         type:"DELETE"
@@ -20,5 +28,6 @@ $(".delete").on("click", function(event){
     console.log("deleted burger", id);
     location.reload();
         }
-    );
-});
+     );
+    });
+})

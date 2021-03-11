@@ -34,7 +34,7 @@ router.delete("/api/burgers/:id", function(req,res){
     var condition={
         id:req.params.id
     }
-    burger.delete( condition, function(burgerData){
+    burgerModel.delete( condition, function(burgerData){
         res.json(burgerData)
     })
 })

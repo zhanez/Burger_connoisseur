@@ -11,12 +11,14 @@ var burger= {
       cbController(burgerData)
     })
   },
-  updateOne:function(updateObject, condition, cbController){
-    orm.updateOne("burgers", updateObject, condition, function(burgerData){
+  delete:function(condition, cbController){
+    orm.delete("burgers", condition, function(burgerData){
       cbController(burgerData)
-    })
+    });
   }
-
 }
+
+
+
 
 module.exports=burger 

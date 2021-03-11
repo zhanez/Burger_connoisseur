@@ -13,7 +13,7 @@
         {{#unless devoured}}
         <li class="list-group-item"> 
           <p>{{burger_name}} <button class="devoured"  data-id={{id}}   >Devoured</button> 
-            {{burger_name}} <button class="delete" data-id={{id}}> X </button> </p>
+            {{burger_name}} <button class="delete" data-id={{id}} type="submit" data-order="true"> X </button> </p>
         </li>
         {{/unless}}
         {{/each}}
@@ -32,7 +32,7 @@
         {{#each burgers}}
         {{#if devoured}}
          <li class="list-group-item"> 
-           <p>{{burger_name}} <button class="delete" data-id={{id}}> X </button>
+           <p>{{burger_name}} <button class="delete" data-id={{id}} type="submit" data-order="true"> X </button>
          </li>
         {{/if}}
         {{/each}}
@@ -40,13 +40,6 @@
     </div>
 </div>
 
-{{!-- 
-    <form action="/api/burger" method="POST">
-       <input id="addburger" type="text" name="burger_name" id="" placeholder="Add Burger">
-
-       <input type ="submit"  value="submit">
-    </form>
- --}}
 
 
 
