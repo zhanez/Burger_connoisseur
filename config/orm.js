@@ -16,7 +16,8 @@ var orm ={
         connection.query("UPDATE ?? set ? WHERE ?", [tableName, updateObject, condition],function(err, burgerData){
             cbModels(burgerData)
         })
-    }
+    },
+    
 }
 
 module.exports= orm
