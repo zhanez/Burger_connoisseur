@@ -1,0 +1,14 @@
+body{
+    background-image: url("/assets/css/image/burger.jpg");
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+    font-family: cursive;
+    color: white;
+}
+
+ul{
+    list-style: none;
+}

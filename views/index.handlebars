@@ -1,28 +1,32 @@
-{{> navbar/navbar-block}}
+<div>
+  <div><h1 class="title"> Burger Connoisseur</h1></div>
+  <div class="row justify-content-center"> 
+    <div class="col-6">
+       <ul class="list-group">
 
-<ul class="list-group">
-
-    {{#each burgers}}
-    {{#unless devoured}}
-    <li class="list-group-item"> {{burger_name}} <button class="devoured"  data-id={{id}}>Devoured</button> </li>
-    {{/unless}}
-    {{/each}}
-
-
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li class="list-group-item"> {{burger_name}} <button class="devoured"  data-id={{id}}>Devoured</button> </li>
+        {{/unless}}
+        {{/each}}
 </ul>
+    </div>
+
+  </div>
+
+</div>
 
 
-
-<ul class="list-group">
-  
+<div class="row justify-content-center">
+  <div class="col-6">
+      <ul class="list-group">
         {{#each burgers}}
         {{#if devoured}}
          <li class="list-group-item"> {{burger_name}}</li>
         {{/if}}
         {{/each}}
-
 </ul>
-
+</div>
 
 <form action="/api/burger" method="POST">
   <input type="text" name="burger_name" id="">
@@ -33,4 +37,4 @@
 
 
 
-{{> footer/footer}}
+{{!-- {{> footer/footer}} --}}
