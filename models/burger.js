@@ -6,11 +6,18 @@ var burger= {
          cbController(burgerData)
      })
   },
+ 
   insertOne:function(body, cbController){
     orm.insertOne("burgers", body, function(burgerData){
       cbController(burgerData)
     })
   },
+  updateOne: function(updateObject, condition,cbController){
+    orm.updateOne("burgers", updateObject, condition, function(burgerData){
+        cbController(burgerData)
+    })
+ },
+ 
   delete:function(condition, cbController){
     orm.delete("burgers", condition, function(burgerData){
       cbController(burgerData)

@@ -4,7 +4,7 @@ $(function () {
     
     });
 
-$(".devoured").on("click", function(){
+    $(".devoured").on("click", function(){
     var id = $(this).attr("data-id")
     $.ajax({
         url:"/api/burgers/"+id,
@@ -12,20 +12,20 @@ $(".devoured").on("click", function(){
     })
     .then(function(){
     location.reload();
-    }
-    );
-});
+        }
+        );
+    });
 
 
 
-$(".delete").on("click", function(event){
-    var id = $(this).attr("id");
+    $(".delete").on("click", function(event){
+    var id = $(this).attr("data-id");
     $.ajax({
         url:"/api/burgers/"+id,
         type:"DELETE"
     })
     .then(function(){
-    console.log("deleted burger", id);
+    console.log("delete burger", id);
     location.reload();
         }
      );

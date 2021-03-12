@@ -1,5 +1,6 @@
-const burger = require("../models/burger")
-var burgerModel= require("../models/burger")
+// const burger = require("../models/burger")
+// var express = require("express")
+var burgerModel= require("../models/burger.js")
 var router = require("express").Router()
 // selectAll()
 // insertOne()
@@ -31,10 +32,11 @@ router.put("/api/burgers/:id", function(req,res){
 })
 
 router.delete("/api/burgers/:id", function(req,res){
-    var condition={
+    var deleteBurger={
         id:req.params.id
     }
-    burgerModel.delete( condition, function(burgerData){
+    burgerModel.delete( deleteBurger, function(burgerData){
+
         res.json(burgerData)
     })
 })

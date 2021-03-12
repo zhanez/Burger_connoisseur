@@ -18,7 +18,7 @@ var orm ={
         })
     },
     delete: function(tableName, condition, cbModels){
-        connection.query("DELETE FROM ?? table ? WHERE ?", [ condition],function(err, burgerData){
+        connection.query("DELETE FROM ?? WHERE ?", [tableName, condition],function(err, burgerData){
             cbModels(burgerData)
         })
     }
